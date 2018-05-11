@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    
+    <div id="App">
+        <h1> {{ nome }}</h1><h1> {{ idade}} </h1>
+        <input type="text" v-on:input="alterarNome">
+        <a v-bind:href="hiperlink">google CRLH</a>
+        <div v-html=hiperlink2></div>
+
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#App',
+            data:{
+                nome:"Ola poncha",
+                idade: 18,
+                hiperlink:'http://www.google.com',
+                hiperlink2:'<a href="http://www.google.com">google aaaa</a>'
+                },
+            methods: {
+                alterarNome: function (event){
+                   this.nome=event.target.value
+                }
+            }
+            })
+    </script>
+</body>
+</html>
